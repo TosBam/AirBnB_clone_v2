@@ -4,9 +4,7 @@ A script that starts a Flask web application:
 """
 
 from flask import Flask
-
 app = Flask(__name__)
-
 
 @app.route('/', strict_slashes=False)
 def hello_route():
@@ -27,7 +25,6 @@ def hbnb_route():
     """
     return "HBNB"
 
-
 @app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
     """
@@ -37,7 +34,6 @@ def c_route(text):
         str: "C <text>"
     """
     return "C {}".format(text.replace('_', ' '))
-
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)

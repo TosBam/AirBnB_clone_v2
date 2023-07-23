@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Starts a Flask web application.
-
+"""Script that starts a Flask web application.
 The application listens on 0.0.0.0, port 5000.
 Routes:
     /states: HTML page with a list of all State objects.
@@ -11,7 +10,6 @@ from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
-
 
 @app.route("/states", strict_slashes=False)
 def states():
@@ -36,7 +34,6 @@ def states_id(id):
 def teardown(exc):
     """Remove the current SQLAlchemy session."""
     storage.close()
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

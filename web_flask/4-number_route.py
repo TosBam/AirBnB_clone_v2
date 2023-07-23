@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """
-A script that starts a Flask web application:
+script that starts a Flask web application:
 """
 
 from flask import Flask
-
 app = Flask(__name__)
-
 
 @app.route('/', strict_slashes=False)
 def hello_route():
@@ -16,7 +14,6 @@ def hello_route():
         str: "Hello HBNB"
     """
     return "Hello HBNB!"
-
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb_route():
@@ -37,7 +34,6 @@ def c_route(text):
         str: "C <text>"
     """
     return "C {}".format(text.replace('_', ' '))
-
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
